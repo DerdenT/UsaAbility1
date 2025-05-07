@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юзабилити сайтов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="uselogo.png" alt="Логотип" class="top-bar-logo">
+        Не заставляйте меня думать.
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about-usability.html">О юзабилити</a></li>
+                <li><a href="comparison.html">Сравнение</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Рекламный баннер -->
+    <div class="ad-banner" id="adBanner">
+        <span class="close-button" onclick="closeAdBanner()">&times;</span>
+        <p>Список контактов! <a href="#" onclick="openModal(); return false;">Посмотреть</a></p>
+    </div>
+
+    <main>
+        <section id="homepage">
+            <div class="logo-container">
+                <!-- Мы больше не используем этот контейнер для основного логотипа -->
+            </div>
+            <h1>Не заставляйте меня думать.</h1>
+            <div class="quote-box">
+                <p>Первый вопрос, который возникает при разработке сайта: “Что мне следует сделать в самую первую очередь, если я хочу, чтобы моим сайтом или приложением было легко пользоваться?” Ответ прост: <strong>“Не заставляйте меня думать.”</strong> Этот принцип перекрывает всё и разрешает любые противоречия.</p>
+            </div>
+            <div class="featured-image-container">
+                <img src="use1.png" alt="Пример юзабилити" class="featured-image">
+            </div>
+            <p>Изучайте основы юзабилити и улучшайте удобство ваших веб-проектов.</p>
+            <button class="start-button" onclick="location.href='about-usability.html';">Начать</button>
+        </section>
+            <!-- Маленькое видео в нижнем правом углу -->
+    <div class="mini-video-container">
+        <video id="miniVideo" width="200" controls muted loop>
+            <source src="razgovor.mp4" type="video/mp4">
+            <source src="your-mini-video.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </main>
+    <footer>
+    <div class="contact-form">
+        <h3>Контакты для связи:</h3>
+        <form action="#" method="post">
+            <div
+                <p>Telegram:@f1ver1</p>
+            </div>
+            <div
+                <p>Телефонный номер:+79250232318</p>
+            </div>
+        </form>
+    </div>
+    <p>© 2025 Юзабилити сайтов</p>
+</footer>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Мои контакты</h2>
+        <p>Telegram: @f1ver1</p>
+        <p>Телефонный номер: +79250232318</p>
+        <!-- Добавьте сюда свою информацию -->
+    </div>
+</div>
+
+    <script>
+        // Function to close the ad banner
+        function closeAdBanner() {
+            var adBanner = document.getElementById('adBanner');
+            adBanner.style.display = 'none';
+        }
+
+        // Показываем баннер через 5 секунд (5000 миллисекунд)
+        setTimeout(function() {
+            var adBanner = document.getElementById('adBanner');
+            adBanner.style.display = 'block';
+        }, 2000); // Задержка в 2 секунды
+
+        // Получаем модальный
+        var modal = document.getElementById("myModal");
+
+        // Функция открытия модального окна
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // Функция закрытия модального окна
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Закрываем модальное окно при клике вне его
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

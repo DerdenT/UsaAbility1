@@ -1,0 +1,509 @@
+/* Импорт шрифта Open Sans из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #333; /* Более темный фон */
+    color: #ddd; /* Основной цвет текста */
+    line-height: 1.6;
+}
+
+/* Общие стили для ссылок */
+a {
+    color: #00BFFF; /* Цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #64b5f6; /* Цвет ссылок при наведении */
+}
+
+/* Header */
+header {
+    background-color: #222;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #777;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.main1 {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #444;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Quote Box */
+.quote-box {
+    background-color: #555;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quote-box p {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #eee;
+}
+
+.quote-box strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Text Frame */
+.text-frame {
+    background-color: #555;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Images Container */
+.images-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Добавлено для адаптивности */
+}
+
+.images-container img {
+    max-width: 45%; /* Адаптивное отображение картинок */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.start-button, .next-page-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00BFFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.start-button:hover, .next-page-btn:hover {
+    background-color: #007acc;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+/* Оформление списка */
+ol {
+    padding-left: 20px; /* Отступ для нумерованного списка */
+}
+
+ol li {
+    margin-bottom: 10px; /* Расстояние между пунктами */
+}
+
+ol strong {
+    font-weight: 600;
+}
+
+/* Добавление адаптивности */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .images-container {
+        flex-direction: column;
+    }
+
+    .images-container img {
+        max-width: 100%;
+    }
+}
+
+.top-bar {
+    background-color: #555;
+    color: #fff;
+    text-align: center; /* Центрируем текст по умолчанию */
+    padding: 2px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    top: 0;
+    z-index: 100;
+    display: flex; /* Используем flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы по горизонтали (текст и логотип) */
+}
+
+.top-bar-logo {
+    max-height: 100px; /* Задаем максимальную высоту логотипа */
+    margin-right: 0px; /* Отступ между логотипом и текстом */
+    border-radius: 2px;
+}
+
+.logo-container {
+    display: none; /* Скрываем контейнер */
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #ddd;
+    line-height: 1.6;
+    padding-top: 0px; /* Убираем отступ, так как top-bar теперь на месте */
+}
+
+/* Стили для логотипа */
+.logo-container {
+    text-align: center; /* Центрируем логотип */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.logo {
+    max-width: 200px; /* Максимальная ширина логотипа */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+/* Стили для основной картинки */
+.featured-image-container {
+    text-align: center; /* Центрируем изображение */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.featured-image {
+    max-width: 80%; /* Максимальная ширина изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+}
+/* styles.css */
+
+/* Добавьте или обновите следующие стили */
+
+.images-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.image-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 45%;
+}
+
+.comparison-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: transform 0.2s ease; /* Добавляем плавную анимацию */
+}
+
+.comparison-image:hover {
+    transform: scale(1.05); /* Незначительное увеличение при наведении */
+}
+
+/* Overlay стили */
+#overlay {
+    display: none; /* Скрыт по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Курсор-крестик */
+}
+
+#fullsize-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Вписываем изображение в контейнер */
+}
+/* Стили для overlay с крестиком */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#fullsize-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+    z-index: 1001; /*  Над изображением */
+}
+
+.close-btn:hover {
+    color: #bbb;
+
+.footer {
+    background-color: #222;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+footer {
+    display: block;
+    unicode-bidi: isolate;
+}
+}
+/* Рекламный баннер */
+.ad-banner {
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: fixed; /* Фиксированное положение */
+    bottom: 20px; /* Отступ снизу */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точное центрирование */
+    border-radius: 8px;
+    z-index: 1000; /* Над всем остальным контентом */
+    display: none; /* Скрыт по умолчанию, будет показан скриптом */
+}
+
+.ad-banner a {
+    color: white; /* Цвет ссылок в баннере */
+    text-decoration: underline;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+    /* Стили для модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Фиксированное положение */
+            z-index: 1; /* Поверх всего остального контента */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Включает прокрутку, если контент не помещается */
+            background-color: rgba(0, 0, 0, 0.4); /* Черный с прозрачностью */
+        }
+
+        /* Содержимое модального окна */
+        .modal-content {
+            background-color: #333; /* Цвет фона сайта */
+            color: #ddd; /* Цвет текста для соответствия */
+            margin: 15% auto; /* Отступ сверху и снизу, центрирование по горизонтали */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Ширина содержимого */
+        }
+
+        /* Кнопка закрытия */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: white; /* Меняем цвет при наведении */
+            text-decoration: none;
+            cursor: pointer;
+        }
+          /* styles.css */
+
+/* ... (Ваши существующие стили) ... */
+
+/* Стили для кнопок регистрации/логина */
+.auth-buttons {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 20px;          /* Отступ от верхнего края */
+    right: 20px;        /* Отступ от правого края */
+    display: flex;      /* Flexbox для выравнивания кнопок */
+    gap: 10px;          /* Расстояние между кнопками */
+    z-index: 101;       /* Убедитесь, что они выше header (z-index: 100) */
+}
+
+.auth-button {
+    padding: 10px 15px;
+    background-color: #6c757d; /* Цвет фона */
+    color: white;               /* Цвет текста */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #5a6268; /* Более темный цвет при наведении */
+}
+
+/* Стили для модальных окон регистрации/логина */
+.auth-modal {
+    display: none;          /* Скрыто по умолчанию */
+    position: fixed;        /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 102;           /* Выше кнопок авторизации */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;    /* Центрирование по вертикали */
+}
+
+.auth-modal-content {
+    background-color: #fff; /* Белый фон */
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;           /* Ширина окна */
+    max-width: 90%;        /* Адаптивная ширина на маленьких экранах */
+    text-align: center;
+}
+
+.auth-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Дополнительные стили для форм внутри модального окна */
+.auth-modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-modal-content label {
+    text-align: left;
+}
+
+.auth-modal-content input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-modal-content button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-modal-content button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mini Video Container */
+.mini-video-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1001;
+}

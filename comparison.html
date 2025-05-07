@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юзабилити сайтов | Сравнение</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="uselogo.png" alt="Логотип" class="top-bar-logo">
+        Не заставляйте меня думать.
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about-usability.html">О юзабилити</a></li>
+                <li><a href="comparison.html">Сравнение</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="comparison">
+            <h1>Сравнение подходов к юзабилити</h1>
+            <div class="text-frame">
+                <p>Пользователь на обдумывание следующих ситуаций не должен тратить своё время:<br />
+                Где я?<br />
+                Откуда следует начинать?<br />
+                Где они поместили …?<br />
+                Что является самым важным на этой странице?<br />
+                Почему они назвали это так?<br />
+                Реклама или часть сайта.<br /><br />
+                Нельзя сделать самоочевидным всё. Но добиться самоочевидности страницы или главного экрана — это возможно.</p>
+            </div>
+            <div class="images-container">
+                <div class="image-wrapper">
+                    <img src="use2.jpg" alt="До оптимизации" class="comparison-image" onclick="openFullSize(this.src)">
+                    <p class="image-label">Плохой пример юзабилити. (Нажмите чтобы посмотреть)</p>
+                </div>
+                <div class="image-wrapper">
+                    <img src="use3.jpg" alt="После оптимизации" class="comparison-image" onclick="openFullSize(this.src)">
+                    <p class="image-label">Хороший пример юзабилити. (Нажмите чтобы посмотреть)</p>
+                </div>
+            </div>
+        </section>
+        <!-- Маленькое видео в нижнем правом углу -->
+    <div class="mini-video-container">
+        <video id="miniVideo" width="200" controls muted loop>
+            <source src="razgovor.mp4" type="video/mp4">
+            <source src="your-mini-video.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    </main>
+    <footer>
+    <div class="contact-form">
+        <h3>Контакты для связи:</h3>
+        <form action="#" method="post">
+            <div
+                <p>Telegram:@f1ver1</p>
+            </div>
+            <div
+                <p>Телефонный номер:+79250232318</p>
+            </div>
+        </form>
+    </div>
+    <p>© 2025 Юзабилити сайтов</p>
+</footer>
+
+    <div id="overlay">
+        <span class="close-btn" onclick="closeFullSize()">&times;</span>
+        <img id="fullsize-img">
+    </div>
+
+    <div id="overlay" onclick="closeFullSize()">
+        <img id="fullsize-img">
+    </div>
+
+    <script>
+        function openFullSize(imgSrc) {
+            const overlay = document.getElementById('overlay');
+            const fullsizeImg = document.getElementById('fullsize-img');
+
+            fullsizeImg.src = imgSrc;
+            overlay.style.display = 'flex'; // Показываем overlay
+        }
+
+        function closeFullSize() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'none'; // Скрываем overlay
+        }
+    </script>
+</body>
+</html>

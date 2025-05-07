@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Юзабилити сайтов | О юзабилити</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стили для разделения страницы на текст и видео */
+        .main-content {
+            display: flex;
+        }
+
+        .text-column {
+            width: 90%;
+            padding: 20px;
+        }
+
+        .video-column {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-column video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Стили для маленького видео */
+        .mini-video-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Стили для кнопок и всплывающего текста */
+        .aspect-button {
+            background-color: #ff4800;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+            display: inline-block; /* Чтобы кнопки были в строку */
+        }
+
+        .aspect-button:hover {
+            background-color: #333;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 10;
+            display: none; /* Скрываем изначально */
+        }
+
+        /* Добавим стиль для отображения tooltip */
+        .tooltip.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="uselogo.png" alt="Логотип" class="top-bar-logo">
+        Не заставляйте меня думать.
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about-usability.html">О юзабилити</a></li>
+                <li><a href="comparison.html">Сравнение</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ad-banner" id="adBanner">
+        <span class="close-button" onclick="closeAdBanner()">&times;</span>
+        <p>Список контактов! <a href="#" onclick="openModal(); return false;">Посмотреть</a></p>
+    </div>
+
+    <main1>
+        <section id="about-usability">
+            <h1>Что такое юзабилити?</h1>
+
+            <div class="main-content">
+                <div class="text-column">
+                    <div class="text-frame">
+                        <p>Увиденная вами веб-страница, с точки зрения человеческих возможностей, должна быть самоочевидной, ясной и не требовать объяснений. Пользователь должен в состоянии уловить, что это такое и как его использовать, не прикладывая никаких усилий для размышлений.</p>
+                        
+                        <h2>Основные аспекты юзабилити</h2>
+                        <ol>
+                            <li><span class="aspect-button" data-tooltip="Делает ли нечто то, что людям требуется сделать?">Полезность</span></li>
+                            <li><span class="aspect-button" data-tooltip="Могут ли люди выяснить, как его использовать?">Изучаемость</span></li>
+                            <li><span class="aspect-button" data-tooltip="Надо ли каждый раз изучать всё заново при повторном использовании?">Запоминаемость</span></li>
+                            <li><span class="aspect-button" data-tooltip="Позволяет ли оно выполнить работу?">Эффективность</span></li>
+                            <li><span class="aspect-button" data-tooltip="Выполняется ли работа с разумными затратами времени и усилий?">Продуктивность</span></li>
+                            <li><span class="aspect-button" data-tooltip="Нужно ли это людям?">Востребованность</span></li>
+                            <li><span class="aspect-button" data-tooltip="Приносит ли его использование положительные эмоции?">Привлекательность</span></li>
+                        </ol>
+
+                    </div>
+                    <button class="next-page-btn" onclick="location.href='comparison.html';">Перейти к сравнению</button>
+                </div>
+
+                <div class="video-column">
+                    <video width="640" height="360" controls>
+                        <source src="Adsigma.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео тег.
+                    </video>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Контейнер для всплывающих подсказок (tooltip) -->
+        <div id="tooltips-container"></div>
+
+    </main1>
+
+    <!-- Маленькое видео в нижнем правом углу -->
+    <div class="mini-video-container">
+        <video id="miniVideo" width="200" controls muted loop>
+            <source src="razgovor.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <footer>
+        <div class="contact-form">
+            <h3>Контакты для связи:</h3>
+            <form action="#" method="post">
+                <div>
+                    <p>Telegram:@f1ver1</p>
+                </div>
+                <div>
+                    <p>Телефонный номер:+79250232318</p>
+                </div>
+            </form>
+        </div>
+        <p>© 2025 Юзабилити сайтов</p>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Мои контакты</h2>
+            <p>Telegram: @f1ver1</p>
+            <p>Телефонный номер: +79250232318</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to close the ad banner
+        function closeAdBanner() {
+            var adBanner = document.getElementById('adBanner');
+            adBanner.style.display = 'none';
+        }
+
+        setTimeout(function() {
+            var adBanner = document.getElementById('adBanner');
+            adBanner.style.display = 'block';
+        }, 2000);
+
+        var modal = document.getElementById("myModal");
+
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // JavaScript для всплывающих подсказок
+        document.addEventListener('DOMContentLoaded', function() {
+            const aspectButtons = document.querySelectorAll('.aspect-button');
+            const tooltipsContainer = document.getElementById('tooltips-container');
+
+            aspectButtons.forEach(button => {
+                button.addEventListener('mouseover', (event) => {
+                    const tooltipText = button.getAttribute('data-tooltip');
+                    const tooltip = document.createElement('div');
+                    tooltip.classList.add('tooltip');
+                    tooltip.classList.add('show');
+                    tooltip.textContent = tooltipText;
+
+                    // Позиционируем tooltip относительно кнопки
+                    const buttonRect = button.getBoundingClientRect();
+                    tooltip.style.left = `${buttonRect.left + window.scrollX}px`; // Позиция слева от кнопки
+                    tooltip.style.top = `${buttonRect.bottom + window.scrollY + 5}px`; // Позиция под кнопкой
+
+                    tooltipsContainer.appendChild(tooltip);
+
+                    button.addEventListener('mouseout', () => {
+                        tooltip.remove(); // Удаляем tooltip при уходе мыши
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
